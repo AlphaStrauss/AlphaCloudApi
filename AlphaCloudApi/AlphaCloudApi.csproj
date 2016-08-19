@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="AlphaCloudApi.cs" />
     <Compile Include="Clouds\DropboxApi.cs" />
+    <Compile Include="Clouds\DropboxApiKey.cs" />
     <Compile Include="Clouds\GeneralApi.cs" />
     <Compile Include="CloudType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
