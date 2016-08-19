@@ -1,0 +1,7 @@
+/AlphaCloudApi/obj
+/AlphaCloudApi/bin
+obj
+bin
+AppTest
+packages
+DropboxApiKey.cs
