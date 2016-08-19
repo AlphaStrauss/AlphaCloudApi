@@ -6,9 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlphaCloudApi", "AlphaCloud
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTest", "AppTest\AppTest.csproj", "{3AB59C9B-3793-4C27-85B3-8D2BEE8E5D2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dropbox.Api", "dropbox-sdk-dotnet\Dropbox.Api\Dropbox.Api.csproj", "{68180B54-4724-4CD1-BAA6-EE7BC309797C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dropbox.Api.Portable", "dropbox-sdk-dotnet\Dropbox.Api\Dropbox.Api.Portable.csproj", "{786C830F-07A1-408B-BD7F-6EE04809D6DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dropbox.Api.Portable", "Dropbox.Api\Dropbox.Api\Dropbox.Api.Portable.csproj", "{786C830F-07A1-408B-BD7F-6EE04809D6DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,16 +58,6 @@ Global
 		{3AB59C9B-3793-4C27-85B3-8D2BEE8E5D2D}.Release|x86.ActiveCfg = Release|x86
 		{3AB59C9B-3793-4C27-85B3-8D2BEE8E5D2D}.Release|x86.Build.0 = Release|x86
 		{3AB59C9B-3793-4C27-85B3-8D2BEE8E5D2D}.Release|x86.Deploy.0 = Release|x86
-		{68180B54-4724-4CD1-BAA6-EE7BC309797C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68180B54-4724-4CD1-BAA6-EE7BC309797C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68180B54-4724-4CD1-BAA6-EE7BC309797C}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{68180B54-4724-4CD1-BAA6-EE7BC309797C}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{68180B54-4724-4CD1-BAA6-EE7BC309797C}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{68180B54-4724-4CD1-BAA6-EE7BC309797C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68180B54-4724-4CD1-BAA6-EE7BC309797C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68180B54-4724-4CD1-BAA6-EE7BC309797C}.Release|ARM.ActiveCfg = Release|Any CPU
-		{68180B54-4724-4CD1-BAA6-EE7BC309797C}.Release|x64.ActiveCfg = Release|Any CPU
-		{68180B54-4724-4CD1-BAA6-EE7BC309797C}.Release|x86.ActiveCfg = Release|Any CPU
 		{786C830F-07A1-408B-BD7F-6EE04809D6DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{786C830F-07A1-408B-BD7F-6EE04809D6DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{786C830F-07A1-408B-BD7F-6EE04809D6DB}.Debug|ARM.ActiveCfg = Debug|Any CPU

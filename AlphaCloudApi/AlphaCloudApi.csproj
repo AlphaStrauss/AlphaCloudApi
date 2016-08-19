@@ -68,9 +68,8 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\dropbox-sdk-dotnet\Dropbox.Api\Dropbox.Api.Portable.csproj">
+    <ProjectReference Include="..\Dropbox.Api\Dropbox.Api\Dropbox.Api.Portable.csproj">
       <Project>{786c830f-07a1-408b-bd7f-6ee04809d6db}</Project>
       <Name>Dropbox.Api.Portable</Name>
     </ProjectReference>
