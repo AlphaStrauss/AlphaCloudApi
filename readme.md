@@ -1,6 +1,6 @@
 # AlphaCloudAPI
 
-The AlphaCloudAPI is a connector for as much as possible cloud storages. It's a portable Library for use in any C# project.
+The AlphaCloudAPI is a connector for as many as possible cloud storages. It's a portable Library for use in any C# project.
 
 The structured api should make it easier to implement cloud storagess in your own system. Even if you use Windows Forms, Universal Apps or Xamarin, it is possible to include it.
 
