@@ -26,4 +26,4 @@ The structured API should make it easier to implement cloud storages in your own
 
 Donate for more time to implement further cloud connections.
 
-[![Donate](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VBZVP56BKXCG4)
+[![Donate](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UTAZ2J5QEGD7G)
