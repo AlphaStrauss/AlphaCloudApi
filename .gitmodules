@@ -1,0 +1,3 @@
+[submodule "Dropbox.Api"]
+	path = Dropbox.Api
+	url = https://github.com/AlphaStrauss/dropbox-sdk-dotnet
