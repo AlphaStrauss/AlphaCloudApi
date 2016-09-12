@@ -9,10 +9,11 @@ using Dropbox.Api.Files;
 
 namespace AlphaStrauss.AlphaCloudApi.Clouds
 {
-    public partial class DropboxApi : GeneralApi
+    partial class DropboxApi : IGeneralApi
     {
         private string redirectUri { get; set; } = "http://localhost:5000/Home/Auth";
         private string oauth2State { get; set; }
+        public bool HasAccessToken { get { return AccessToken != ""; } }
         private string AccessToken { get; set; }
         private string Uid { get; set; }
 
@@ -20,10 +21,10 @@ namespace AlphaStrauss.AlphaCloudApi.Clouds
 
         public DropboxApi()
         {
-
+            AccessToken = "";
         }
 
-        public override Uri Start()
+        public Uri Start()
         {
             this.oauth2State = Guid.NewGuid().ToString("N");
             Uri authorizeUri = DropboxOAuth2Helper.GetAuthorizeUri(OAuthResponseType.Token, appkey, redirectUri, state: oauth2State);
@@ -32,7 +33,7 @@ namespace AlphaStrauss.AlphaCloudApi.Clouds
             return authorizeUri;
         }
 
-        public override bool BrowserNavigating(Uri uri)
+        public bool BrowserNavigating(Uri uri)
         {
             // @todo: looking later for better condition
             if (false) //!uri.ToString().StartsWith(redirectUri, StringComparison.OrdinalIgnoreCase))
@@ -74,7 +75,7 @@ namespace AlphaStrauss.AlphaCloudApi.Clouds
             }
         }
 
-        public override async Task<string> Download(string folder, string file)
+        public async Task<string> Download(string folder, string file)
         {
             using (var response = await client.Files.DownloadAsync(folder + "/" + file))
             {
@@ -82,7 +83,7 @@ namespace AlphaStrauss.AlphaCloudApi.Clouds
             }
         }
 
-        public override async Task Upload(string folder, string file, MemoryStream content)
+        public async Task Upload(string folder, string file, MemoryStream content)
         {
             Debug.WriteLine("Dropbox: upload file...");
 

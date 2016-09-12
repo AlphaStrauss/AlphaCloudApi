@@ -8,10 +8,18 @@ using System.Threading.Tasks;
 
 namespace AlphaStrauss.AlphaCloudApi
 {
-    public class AlphaCloudApi : GeneralApi
+    public class AlphaCloudApi : IGeneralApi
     {
         public CloudType cloud;
-        public GeneralApi cloudApi;
+        private IGeneralApi cloudApi;
+
+        public bool HasAccessToken
+        {
+            get
+            {
+                return cloudApi.HasAccessToken;
+            }
+        }
 
         public AlphaCloudApi(CloudType type)
         {
@@ -32,24 +40,38 @@ namespace AlphaStrauss.AlphaCloudApi
 
         #region implementation of abstract functions
 
-        public override Uri Start()
+        public Uri Start()
         {
             return cloudApi.Start();
         }
 
-        public override bool BrowserNavigating(Uri uri)
+        public bool BrowserNavigating(Uri uri)
         {
             return cloudApi.BrowserNavigating(uri);
         }
 
-        public override Task<string> Download(string folder, string file)
+        public Task<string> Download(string folder, string file)
         {
-            return cloudApi.Download(folder, file);
+            if (HasAccessToken)
+            {
+                return cloudApi.Download(folder, file);
+            }
+            else
+            {
+                throw new MissingCloudAccessTokenException();
+            }
         }
 
-        public override Task Upload(string folder, string file, MemoryStream content)
+        public Task Upload(string folder, string file, MemoryStream content)
         {
-            return cloudApi.Upload(folder, file, content);
+            if (HasAccessToken)
+            {
+                return cloudApi.Upload(folder, file, content);
+            }
+            else
+            {
+                throw new MissingCloudAccessTokenException();
+            }
         }
 
         #endregion
