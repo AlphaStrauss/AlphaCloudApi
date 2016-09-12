@@ -1,6 +1,7 @@
 ﻿using AlphaStrauss.AlphaCloudApi.Clouds;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,7 +47,7 @@ namespace AlphaStrauss.AlphaCloudApi
             return cloudApi.Download(folder, file);
         }
 
-        public override Task Upload(string folder, string file, byte[] content)
+        public override Task Upload(string folder, string file, MemoryStream content)
         {
             return cloudApi.Upload(folder, file, content);
         }

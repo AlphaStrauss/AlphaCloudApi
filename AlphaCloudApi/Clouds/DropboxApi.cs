@@ -82,30 +82,28 @@ namespace AlphaStrauss.AlphaCloudApi.Clouds
             }
         }
 
-        public override async Task Upload(string folder, string file, byte[] content)
+        public override async Task Upload(string folder, string file, MemoryStream content)
         {
             Debug.WriteLine("Dropbox: upload file...");
-            using (var mem = new MemoryStream(content))
-            {
-                if (client == null)
-                    Debug.WriteLine("client is null!");
 
-                if (client.Files == null)
-                    Debug.WriteLine("client.Files is null!");
+            if (client == null)
+                Debug.WriteLine("client is null!");
+
+            if (client.Files == null)
+                Debug.WriteLine("client.Files is null!");
                 
-                byte[] memBytes = mem.ToArray();
-                Debug.WriteLine("Content ("+memBytes.Length+"): "+Encoding.UTF8.GetString(memBytes, 0, memBytes.Length));
+            byte[] contentBytes = content.ToArray();
+            Debug.WriteLine("Content ("+contentBytes.Length+"): "+Encoding.UTF8.GetString(contentBytes, 0, contentBytes.Length));
 
-                Debug.WriteLine("Dropbox: create commitinfo...");
+            Debug.WriteLine("Dropbox: create commitinfo...");
 
-                CommitInfo info = new CommitInfo((folder[0] == '/' ? "":"/") + folder + "/" + file, WriteMode.Overwrite.Instance);
+            CommitInfo info = new CommitInfo((folder[0] == '/' ? "":"/") + folder + "/" + file, WriteMode.Overwrite.Instance);
 
-                Debug.WriteLine("Dropbox: file ready for upload...");
+            Debug.WriteLine("Dropbox: file ready for upload...");
 
-                FileMetadata updated = await client.Files.UploadAsync(info, mem);
+            FileMetadata updated = await client.Files.UploadAsync(info, content);
 
-                Debug.WriteLine("Dropbox: successfully uploaded!");
-            }
+            Debug.WriteLine("Dropbox: successfully uploaded!");
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,6 @@ namespace AlphaStrauss.AlphaCloudApi.Clouds
 
         public abstract Task<string> Download(string folder, string file);
 
-        public abstract Task Upload(string folder, string file, byte[] content);
+        public abstract Task Upload(string folder, string file, MemoryStream content);
     }
 }
